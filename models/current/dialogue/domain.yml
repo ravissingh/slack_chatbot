@@ -1,0 +1,142 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_thank
+- utter_bye
+- utter_ask_jenkinsjob
+- utter_ask_environment
+- utter_ask_appname
+- utter_ask_servicename
+- utter_anythingelse
+- utter_done
+- utter_unknown
+- utter_ask_ID
+- action_checkservice
+- action_jenkins_param
+- action_jenkins
+- action_GetJIRAStatus_param
+- action_createJIRArequest_param
+- action_search_restaurants
+actions:
+- utter_greet
+- utter_thank
+- utter_bye
+- utter_ask_jenkinsjob
+- utter_ask_environment
+- utter_ask_appname
+- utter_ask_servicename
+- utter_anythingelse
+- utter_done
+- utter_unknown
+- utter_ask_ID
+- actions.ActionCheckService
+- actions.ActionStartJenkinsBuildWithParams
+- actions.ActionStartJenkinsBuild
+- actions.ActionGetJIRAStatus
+- actions.ActionGetJIRACreate
+- actions.ActionSearchRestaurants
+config:
+  store_entities_as_slots: true
+entities:
+- example_entity
+- jenkinsjob
+- environment
+- appname
+- servicename
+- JIRAID
+- cuisine
+- people
+- vegetarian
+- summary
+- description
+- access
+intents:
+- greet
+- thank
+- bye
+- deny
+- affirm
+- trigger_jenkinsjob
+- trigger_deploy
+- check_service
+- check_JIRA_Status
+- create_JIRA_request
+- request_restaurant
+- inform
+- ask_access
+slots:
+  JIRAID:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  access:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  appname:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  description:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  environment:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  example_slot:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  jenkinsjob:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  people:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  requested_slot:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  servicename:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  summary:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  vegetarian:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_anythingelse:
+  - text: Is there anything else I can help you with?
+  utter_ask_ID:
+  - text: For which ID?
+  utter_ask_JIRAID:
+  - text: What's the JIRA_ID ?
+  utter_ask_appname:
+  - text: For which appname?
+  utter_ask_cuisine:
+  - text: For which cuisine?
+  utter_ask_description:
+  - text: Kindly provide description of the issue :-
+  utter_ask_environment:
+  - text: For which environment?
+  utter_ask_jenkinsjob:
+  - text: For which jenkins job?
+  utter_ask_people:
+  - text: For how many people?
+  utter_ask_servicename:
+  - text: For which application or service?
+  utter_ask_summary:
+  - text: Please mention the summary of the issue :-
+  utter_ask_vegetarian:
+  - text: Only Veg? (yes/no)
+  utter_bye:
+  - text: Goodbye
+  utter_done:
+  - text: Done!
+  utter_greet:
+  - text: Hey, how can I help you?
+  utter_thank:
+  - text: You're welcome!
+  utter_unknown:
+  - text: Sorry, I dont recognise what you say!
+topics: []
